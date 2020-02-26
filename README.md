@@ -67,3 +67,94 @@ A[i] = 2i.
 <b>14)</b>	Criar dois vetores A e B cada um com 10 elementos inteiros. Construir um vetor C de mesmo tipo e tamanho, obedecendo as seguintes regras de formação: a) Ci deverá receber 1quando Ai for maior que Bi; b) Ci deverá receber 0 quando Ai for igual a Bi; c) Ci deverá receber -1 quando Ai for menor que Bi.
 
 <b>15)</b>	  Ler um vetor A com dez elementos inteiros. Criar um vetor B que tenha os 10 elementos de A em ordem crescente e um vetor C que tenha os 10 elementos de A em ordem descrescente.
+<br><br>
+<h1>Resoluções lista 6</h1>
+
+
+
+  <h3>Resolução do exercício 1</h3>
+
+<p>Precisaremos de dois <em>vetores</em>, o primeiro pode ser um vetor do tipo <strong>Inteiro</strong> que irá servir para armazenar
+os números digitados pelo usuário e outro do tipo <strong>Double</strong> para pegarmos a raiz quadrada do primeiro 
+ vetor (O segundo vetor tem que ser double, pois, caso a raiz quadrada não for inteira ela irá ser irracional. 
+ <em> Ex: √2 = 1.41421356237...</em>).
+</p>
+<br>
+<pre>
+int a[] = new int[10];
+double b[] = new double[10];
+</pre>
+
+<p>
+ Importarei a Classe <em>Scanner</em> para pegarmos os dados do teclado <br>
+ e também importarei a classe <em>math</em> para podermos utilizar o metódo <code>sqrt();</code>. É ele que vai
+ pegar o número e retornar a Raiz Quadrada desse número.
+ 
+<pre>
+import java.util.Scanner;
+import java.math.*;
+</pre>
+
+agora irei Instanciar o objeto da Classe <em>Scanner</em>
+
+<pre>
+Scanner in = new Scanner(System.in);
+</pre>
+
+<br>
+
+
+<strong><em>and it's now! </em>Vai começar nossa Lógica de Programação.</strong>
+</p>
+<br>
+<p>
+Vamos Utilizar um laço <em>for</em> para pegar os dados digitados pelo usuário.
+</p>
+
+<pre>
+for(int i = 0 ; i <= a.length - 1 ; i++) {}
+</pre>
+
+<p>
+Esse laço for vai começar com <code>i = 0;</code>, e esse <em>'i'</em> vai até o 
+ tamanho do nosso vetor (<em>que no caso é 10</em>). Porém, tem que ser o tamanho do nosso vetor menos 1,
+já que que um vetor de tamanho 10 vai 0 até 9 (<code>i <= a.length - 1;</code>). E a cada volta
+ do laço ele vai incrementar de 1 em 1 (<code>i++;</code>).
+</p>
+<pre>
+for(i=0; i<= a.length - 1; i++) {
+   System.out.println("Digite o "+(i+1)+" número: ");
+   a[i] = in.nextInt();
+   b[i] = a[i];
+   b[i] = Math.sqrt(b[i]);
+}
+</pre>
+<p>
+Primeiro iremos fazer um <code>System.out.println</code> pedindo para o usuário digitar o <em>i-néssino</em> número 
+(<em>Lembre-se que o <code>i</code> começa valendo 0, logo <code>"(i+1)°"</code> irá aparecer na tela como <code>1°</code></em>).
+<br>
+Salvaremos  o número que o usuário digitar no vetor <em>'a'</em> na posição <em>'i'</em> 
+(<code>a[i] = in.nextInt();</code>). Colocaremos o valor de <code>a[i]</code> em <code>b[i]</code> 
+(<code>b[i] = a[i];</code>)
+e com <code> b[i] = Math.sqrt(b[i]); </code>, colocaremos a Raiz quadrada de <code>b[i]</code> nele mesmo.
+E pronto! é só apresentar <code>b[i]</code> para o usuário.
+</p>
+<br>
+<p>
+Só falta dar o <code>System.out.println</code> do resultado na tela. <br>
+E para isso, precisaremos apenas fazer o seguinte código:
+<pre>
+for(i = 0; i <= a.length - 1; i++) {
+     System.out.println("A raiz quadrada de " + a[i] + " = "  +b[i]);
+}
+</pre>
+<em>e voilà!</em>
+</p>
+<br>
+<a href="https://github.com/Vitor-Carmo/P.A-Vetores/blob/master/Vetores/Vetores%20-%20Lista/src/RaizQuadrada.java">
+Meu código completo desse exercício
+</a>
+<br>
+<em>Talvez esteja um pouquinho diferente mas a lógica prevalece :)</em>
+
+
