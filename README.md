@@ -156,5 +156,92 @@ Meu código completo desse exercício
 </a>
 <br>
 <em>Talvez esteja um pouquinho diferente mas a lógica prevalece :)</em>
+<br><br><br>
+
+<h3>Resolução do exercício 2</h3>
+<br>
+<p>
+ Primeiramente, iremos pegar os 10 números digitados do usuário com o laço <em>for</em>.
+ 
+<pre>
+for(i=0;i<=a.length-1;i++){
+            System.out.println("Digite "+(i+1)+"° número: ");
+            a[i] = in.nextInt();
+}
+</pre>
+
+</p>
+<br>
+<p>
+Continuando dentro desse <em>for</em>, iremos utilizar da seguinte lógica:<br>
+Iremos declarar um vetor <code>TotalPrimos[i] = 0;</code>. Depois, criaremos outro 
+<em>for</em>(<code>for(c=1;c<=a[i];c++){}</code>),
+e dentro desse for que acabamos de criar, verificaremos se o numero 'a' na posição 'i' (<code>a[i]</code>) 
+dividido pelo contador, deixa resto zero (<code>if(a[i]%c==0)</code>). Se isso for verdade,
+<code>TotalPrimos[i]++;</code>.<br>
+<pre>
+for( c=1;c<=a[i];c++){
+   if(a[i] % c == 0){
+      TotalPrimos[i]++;
+   }  
+}
+</pre>
+</p>
+<p>
+Vamos, supor que seja a primeira interação do programa com usuário, e no vetor <code>a[0]</code> ele
+digite <strong>3</strong> (<code>a[0] = 3</code>). Então, <code>TotalPrimos[0] = 0;</code> e depois vem o 2° laço <em>for</em>
+(<code>for(c=1;1<=<strong>3</strong>;c++){}</code>). Logo após, ele vai verificar se <strong>3</strong> / 1 deixa 
+ resto 0 (<code>if(3%1==0){}</code>). como isso é <em>true</em>, <code>TotalPrimos[0] = 1;</code>. Após isso, o algoritmo vai voltar para o laço com <code>c=2</code> e irá verificar se <strong>3</strong> / 2 deixa resto 0 (<code>if(3%2==0){}</code>). Isso é <em>false</em>, então o algoritmo não irá fazer nada. E por último, voltará novamente ao laço com <code>c=3</code>
+e novamente irá verificar se <strong>3</strong> / 3 deixa resto 0 (<code>if(3%3==0){}</code>). Sendo isso <em>true</em> novamente, o <code>TotalPrimos[0] = 2;</code>. Já que a definição de um número primo é: 
+</p>
+<blockquote>um número que só pode deixar resto 0 por 1 e por ele mesmo </blockquote>
+<p>
+Iremos verificar depois se esse número deixa o total de 2 restos, ou seja, <code>TotalPrimos[0] == 2;</code> (<em>no caso, pelo que você viu na explicação anterior, 3 é um número primo, pois, só foi divido por 2 números, 1 e ele mesmo</em>).
+</p>
+<pre>
+for(i=0;i<=a.length-1;i++){
+   System.out.println("Digite "+(i+1)+"° número: ");
+   a[i] = in.nextInt();
+   TotalPrimos[i] = 0;
+   for(c=1;c<=a[i];c++){
+       if(a[i]%c==0){
+          TotalPrimos[i]++;
+       }
+   }
+}
+ 
+</pre>
+<br>
+<p>
+Declararei uma variável do tipo inteiro começando com 0, para guardar quantos números primos foram digitados.
+</p>
+<pre>int QuantidadePrimos=0;</pre>
+<br>
+<p>
+ Iremos verificar cada posição do <code>TotalPrimos[i];</code>, para ver se esse elemento é 
+ igual ou não a 2. Caso seja, vamos printar na tela que esse elemento é um número primo e incrementaremos mais um em 
+ <code>QuantidadePrimos</code> (<code>QuantidadePrimos++;</code>). Caso não seja primo, printaremos que tal número não 
+ é primo.
+</p>
+<pre>
+for (i=0;i<=a.length-1;i++) {
+    if (TotalPrimos[i] == 2) {
+       System.out.println(a[i]+" é primo");
+       QuantidadePrimos++;
+     } else {
+       System.out.println(a[i]+" não é primo");
+     }
+}
+
+</pre>
+<p>O último passo e o não menos importante, é o de mostrar para o usuário quantos primos tem no total.</p>
+
+<pre>System.out.print("A quantidade de números primos é: "+QuantidadePrimos);</pre>
+<br>
+<a href="https://github.com/Vitor-Carmo/P.A-Vetores/blob/master/Vetores/Vetores%20-%20Lista/src/NumeroPrimos.java">
+Meu código completo desse exercício
+</a>
+
+
 
 
